@@ -1,6 +1,6 @@
 import React, { ReactNode, MouseEvent, FC } from "react";
 
-type ButtonProps = {
+type PropsType = {
   children: ReactNode;
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   className?: string;
@@ -9,7 +9,7 @@ type ButtonProps = {
   variant?: "primary" | "secondary";
 };
 
-const Button: FC<ButtonProps> = ({
+const Button: FC<PropsType> = ({
   children,
   onClick,
   className = "",
@@ -17,7 +17,7 @@ const Button: FC<ButtonProps> = ({
   disabled = false,
   variant = "primary",
 }) => {
-  const buttonClass = `px-4 py-2 rounded-md ${
+  const buttonClass = `px-2 py-1 rounded-md text-xs ${
     variant === "primary"
       ? "bg-green-500 text-white hover:bg-green-600"
       : "bg-gray-200 text-gray-700 hover:bg-gray-300"
